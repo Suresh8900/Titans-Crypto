@@ -142,30 +142,26 @@ class _LoginScreenState extends State<LoginScreen>  with SingleTickerProviderSta
               }),
             ),
             topMargin(20),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                      color: HexColor(colorGrey),
-                      height: 1,
-                    ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Container(
+                    color: HexColor(colorGrey),
+                    height: 1,
                   ),
+                ),
 
-                  Container(
-                    child: Container(
-                        margin: EdgeInsets.only(right: 10,left: 10),
-                        child: Text("Or Login with",style: textStyle16(HexColor(colorGrey)),)),
+                Container(
+                    margin: EdgeInsets.only(right: 10,left: 10),
+                    child: Text("Or Login with",style: textStyle16(HexColor(colorGrey)),)),
+                Expanded(
+                  child: Container(
+                    color: HexColor(colorGrey),
+                    height: 1,
                   ),
-                  Expanded(
-                    child: Container(
-                      color: HexColor(colorGrey),
-                      height: 1,
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
             topMargin(20),
             Row(

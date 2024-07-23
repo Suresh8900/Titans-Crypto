@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_management/Ui/DashBoard.dart';
 import 'package:task_management/Ui/MarketScrenn.dart';
-import 'package:task_management/Ui/_ChartApp.dart';
+import 'package:task_management/Ui/TradeScreen.dart';
 import 'package:task_management/Utills/HexColor.dart';
 import 'package:task_management/values/ColorValues.dart';
 
@@ -22,7 +22,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
   final List<Widget> _pages = [
     Dashboard(),
     MarketScreen(),
-    CandleStick(),
+    TradeScreen(),
   ];
 
   @override

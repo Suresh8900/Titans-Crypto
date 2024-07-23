@@ -1,6 +1,7 @@
 const String appThemeColor1="#004343";
 const String appThemeCrypto="#1B232A";
 const String appThemeCrypto2="#212931";
+const String appTheme161C22="#161C22";
 const String color77E6B6="#77E6B6";
 const String color2D5151="#2D5151";
 const String colorBlack="#000000";
@@ -35,3 +36,4 @@ const String colorChart="#5ED5A8";
 const String colorBottomNav="#C1C7CD";
 const String color3E474F="#3E474F";
 const String colorA7AFB7="#A7AFB7";
+const String colorF1F4F6="#F1F4F6";

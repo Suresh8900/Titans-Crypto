@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
           debugShowCheckedModeBanner: false,
-         home:  Splashscreen(),
+         home:  HomeScreen2(0),
           theme: ThemeData(
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
