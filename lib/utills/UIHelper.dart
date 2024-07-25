@@ -204,7 +204,7 @@ TextStyle textStyle16(Color textColor) {
   return TextStyle(
       fontWeight: FontWeight.w900,
       color: textColor,
-      fontSize: toolsHelper.getTextSize(16),
+      fontSize: toolsHelper.getTextSize(15),
       decoration: TextDecoration.none);
 }
 
@@ -742,7 +742,7 @@ GestureDetector termsConditionTextView(VoidCallback callback1) {
   return GestureDetector(
     onTap: callback1,
     child: RichText(
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.end,
         text: TextSpan(children: [
           // TextSpan(
           //     text: "By tapping Log in, you agree to our ",
@@ -758,37 +758,32 @@ GestureDetector termsConditionTextView(VoidCallback callback1) {
           //             fontWeight: FontWeight.w400,
           //             textColor: HexColor(color_6B7280),
           //             textSize: 14)),
-          const WidgetSpan(
-              child: Padding(
-            padding: EdgeInsets.only(top: 13), // Adjust the value as needed
-          )),
           TextSpan(
-            text: "Terms & Conditions",
+            text: "TOTAL: ",
             recognizer: TapGestureRecognizer()..onTap = callback1,
             style: const TextStyle(
-              shadows: [Shadow(color: Colors.black, offset: Offset(0, -3))],
-              color: Colors.transparent,
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.grey,
+              color:Colors.grey,
+              decoration: TextDecoration.none,
+              fontSize: 17,
               decorationThickness: 2,
               decorationStyle: TextDecorationStyle.solid,
             ),
           ),
 
-          // TextSpan(
-          //     text: " and ",
-          //     style: textStyle(
-          //         fontWeight: FontWeight.w400,
-          //         textColor: HexColor(color_6B7280),
-          //         textSize: 16)),
+          TextSpan(
+              text: "25.234164400",
+              style: textStyle(
+                  fontWeight: FontWeight.w400,
+                  textColor: Colors.white,
+                  textSize: 25)),
           // TextSpan(
           //     text: "Privacy Policy",
-          //     recognizer: TapGestureRecognizer()..onTap = callback2,
+          //     recognizer: TapGestureRecognizer()..onTap = callBack2,
           //     style: textStyle(
           //             fontWeight: FontWeight.w600,
           //             textColor: HexColor(color_6B7280),
           //             textSize: 16)
-          //         .copyWith(decoration: TextDecoration.underline)),
+          //         .copyWith(decoration: TextDecoration.none)),
         ])),
   );
 }

@@ -37,3 +37,4 @@ const String colorBottomNav="#C1C7CD";
 const String color3E474F="#3E474F";
 const String colorA7AFB7="#A7AFB7";
 const String colorF1F4F6="#F1F4F6";
+const String color252E35="#252E35";

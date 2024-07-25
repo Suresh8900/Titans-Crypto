@@ -111,114 +111,121 @@ Widget SpotPage() {
     ChartData("Sat", 200),
     ChartData("Sun", 600),
   ];
-  return SingleChildScrollView(
-    physics: BouncingScrollPhysics(),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          margin: const EdgeInsets.only(top: 20),
-          child: ListView.builder(
-            itemCount: 12,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (BuildContext context, int index) {
-              return Expanded(
-                child: Container(
-                  margin: EdgeInsets.only(top: 20),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  return  FutureBuilder(
+    future: Future.delayed(Duration(seconds: 1)),
+    builder: (context, snapshot) {
+      if (snapshot.connectionState == ConnectionState.waiting) {
+        return Center(
+          child: CircularProgressIndicator(color: HexColor(color5ED5A8),),
+        );
+      } else {
+        return SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: ListView.builder(
+                  itemCount: 15,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: EdgeInsets.only(top: 20),
+                      child: Column(
                         children: [
-                          Container(
-                              child: Image.asset(
-                            "assets/icons/ic_bitcoin.png",
-                            width: 50,
-                            height: 50,
-                          )),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Bitcoin",
-                                    style: textStyle16(Colors.white),
-                                    softWrap: true,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                  ),
-                                  Text(
-                                    "BTC",
-                                    style: TextStyle(
-                                        fontSize: 12, color: Colors.grey),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset(
+                                "assets/icons/ic_bitcoin.png",
+                                width: 50,
                                 height: 50,
-                                width: 100,
-                                child:
-                                    LineChart(chartDealsData: chartLeadsData)),
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "32,697.05",
-                                  style: textStyle16(Colors.white),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Bitcoin",
+                                        style: textStyle16(Colors.white),
+                                        softWrap: true,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                      Text(
+                                        "BTC",
+                                        style: TextStyle(
+                                            fontSize: 12, color: Colors.grey),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                Text(
-                                  "-0.81%",
-                                  style: TextStyle(
-                                      fontSize: 12, color: Colors.red),
+                              ),
+                              Expanded(
+                                child: Container(
+                                    height: 50,
+                                    width: 100,
+                                    child: LineChart(chartDealsData: chartLeadsData)),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "32,697.05",
+                                      style: textStyle16(Colors.white),
+                                    ),
+                                    Text(
+                                      "-0.81%",
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.red),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
+                          topMargin(10),
+                          Container(
+                              height: 0.1,
+                              width: double.infinity,
+                              color: Colors.white),
                         ],
                       ),
-                      topMargin(10),
-                      Container(
-                          height: 0.1,
-                          width: double.infinity,
-                          color: Colors.white),
+                    );
+                  },
+                ),
+              ),
+              topMargin(40),
+              DottedBorder(
+                borderType: BorderType.RRect,
+                radius: Radius.circular(10),
+                dashPattern: [5, 5],
+                color: HexColor(color3E474F),
+                strokeWidth: 3,
+                child: SizedBox(
+                  height: toolsHelper.getMediaQueryHeight(value: 44),
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.add_circle_outlined, color: HexColor(colorGrey)),
+                      rightMargin(10),
+                      Center(child: Text("Add Favorite", style: textStyle16(HexColor(colorGrey)))),
                     ],
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-        topMargin(40),
-        DottedBorder(
-            borderType: BorderType.RRect,
-            radius: Radius.circular(10),
-            dashPattern: [5, 5],
-            color: HexColor(color3E474F),
-            strokeWidth: 3,
-              child: SizedBox(
-                height: toolsHelper.getMediaQueryHeight(value: 44),
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.add_circle_outlined,color:HexColor(colorGrey),),
-                    rightMargin(10),
-                    Center(child: Text("Add Favorite",style: textStyle16(HexColor(colorGrey)),)),
-                  ],
-                ),
               ),
-            ),
-        topMargin(20),
-      ],
-    ),
+              topMargin(20),
+            ],
+          ),
+        );
+      }
+    },
   );
 }
 

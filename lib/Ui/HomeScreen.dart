@@ -23,6 +23,8 @@ class _HomeScreen2State extends State<HomeScreen2> {
     Dashboard(),
     MarketScreen(),
     TradeScreen(),
+    Container(),
+    Container(),
   ];
 
   @override
